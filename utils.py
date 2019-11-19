@@ -110,17 +110,18 @@ def visualize(image, conv_output, conv_grad, gb_viz):
     # cam = 255 * cam / np.max(cam)
     # cam = np.uint8(cam)
               
-    
+    """
     fig = plt.figure()    
     ax = fig.add_subplot(111)
     imgplot = plt.imshow(img)
     ax.set_title('Input Image')
-    
+    """
     fig = plt.figure(figsize=(12, 16))    
     ax = fig.add_subplot(131)
     imgplot = plt.imshow(cam_heatmap)
-    ax.set_title('Grad-CAM')    
+    ax.set_title('Grad-CAM')
     
+    """
     gb_viz = np.dstack((
             gb_viz[:, :, 0],
             gb_viz[:, :, 1],
@@ -142,6 +143,6 @@ def visualize(image, conv_output, conv_grad, gb_viz):
     ax = fig.add_subplot(133)
     imgplot = plt.imshow(gd_gb)
     ax.set_title('guided Grad-CAM')
-
+   """
     plt.show()
     
